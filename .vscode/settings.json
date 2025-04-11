@@ -1,0 +1,36 @@
+{
+  "editor.autoIndent": "advanced",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.indentSize": 2,
+  "editor.tabSize": 2,
+  "eslint.enable": true,
+  "prettier.configPath": ".prettierrc",
+  "prettier.requireConfig": true,
+  "prettier.singleQuote": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#ed2038",
+    "activityBar.background": "#ed2038",
+    "activityBar.foreground": "#ffffff",
+    "activityBar.inactiveForeground": "#ebebeb99",
+    "activityBarBadge.background": "#00fb4f",
+    "activityBarBadge.foreground": "#15202b",
+    "commandCenter.border": "#15202b99",
+    "sash.hoverBorder": "#ed2038",
+    "statusBar.background": "#9d0f0f",
+    "statusBar.foreground": "#ffffff",
+    "statusBarItem.hoverBackground": "#9d0f0f",
+    "statusBarItem.remoteBackground": "#9d0f0f",
+    "statusBarItem.remoteForeground": "#fbfbfb",
+    "titleBar.activeBackground": "#9d0f0f",
+    "titleBar.activeForeground": "#fbfbfb",
+    "titleBar.inactiveBackground": "#9d0f0f",
+    "titleBar.inactiveForeground": "#ffffff"
+  }
+}
