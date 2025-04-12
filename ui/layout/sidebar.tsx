@@ -10,7 +10,7 @@ const menu = [
     icon: <Home className="w-5 h-5" color="#949EB2" />,
     href: '/',
     subItems: [
-      { title: 'Dashboard', href: '/dashboard' },
+      { title: 'Dashboard', href: '/' },
       { title: 'Tasks', href: '/tasks' },
       { title: 'Notifications', href: '/notifications' },
     ],
