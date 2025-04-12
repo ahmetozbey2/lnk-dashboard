@@ -12,6 +12,8 @@ export type User = {
   department?: string;
   position?: string;
   image: string;
+  refId: string;
+  role: 'MANAGER' | 'EMPLOYEE';
 };
 
 export type PayrollRequest = {
