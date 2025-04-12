@@ -1,6 +1,7 @@
 'use client';
 
 import CheckoutButton from '@/components/checkout';
+import Sidebar from '@/ui/layout/sidebar';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import { useEffect, useState } from 'react';
@@ -56,8 +57,10 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6 dark:bg-[#0d0d0d] sm:p-12">
-      <div className="mx-auto grid max-w-5xl gap-6">
+    <div className="flex items-start">
+      <Sidebar />
+
+      <div className="mx-auto flex-[4] gap-6 p-20 bg-[#1D1D1D] min-h-screen mt-16">
         <h1 className="mb-8 text-center text-3xl font-bold text-gray-800 dark:text-white">Pending Payroll Requests</h1>
 
         {loading ? (
