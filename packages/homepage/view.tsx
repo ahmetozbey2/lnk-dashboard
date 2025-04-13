@@ -19,30 +19,23 @@ const detailCardDatas: Array<DetailCardProps> = [
   {
     icon: <History color="#F5FAE6" />,
     label: 'Payment History',
-    href: '/payment-history',
   },
 ];
 
 /**
- * `HomepageView` component represents the main dashboard layout.
- * It consists of:
- * - A sidebar on the left
- * - A grid of interactive detail cards
- * - A right section that shows upcoming payment requests
- *
- * @param props - No props currently used, but `IAppProps` interface is in place for future extensibility.
- * @returns A JSX layout combining sidebar, detail cards, and content sections.
+ * `HomepageView` is the main dashboard component.
+ * It renders a sidebar, a set of feature cards, and upcoming payment info.
  */
 export default function HomepageView() {
   return (
-    <div className="flex items-start">
+    <div className="flex flex-col lg:flex-row items-start min-h-screen">
       {/* Sidebar section */}
       <Sidebar />
 
-      {/* Main content wrapper */}
-      <div className="flex flex-[5] items-start gap-x-10 px-10 pt-10">
+      {/* Main content */}
+      <div className="w-full flex flex-col lg:flex-row flex-[5] gap-6 px-4 sm:px-6 lg:px-10 pt-6 sm:pt-16 items-start">
         {/* Grid of detail cards */}
-        <div className="grid flex-[2.5] grid-cols-2 gap-4 px-4">
+        <div className="lg:grid lg:flex-[2.5] lg:grid-cols-2 lg:gap-4 lg:px-4 max-lg:flex-col max-lg:gap-y-2 max-lg:flex max-lg:w-full">
           {detailCardDatas.map((detailCardData, index) => (
             <DetailCard
               key={index}
@@ -53,10 +46,10 @@ export default function HomepageView() {
           ))}
         </div>
 
-        {/* Right-side content section */}
-        <div className="w-full flex-1 bg-[#242424]">
+        {/* Right-side panel */}
+        <div className="w-full lg:w-auto lg:flex-1 bg-[#242424] rounded-md h-fit">
           {[...Array(3)].map((_, index) => (
-            <div key={index} className={`px-5 py-4 ${index < 2 ? 'border-b border-[#b9b9b9]' : ''}`}>
+            <div key={index} className={`px-4 sm:px-5 py-4 ${index < 2 ? 'border-b border-[#b9b9b9]' : ''}`}>
               <div className="mb-1 flex items-center justify-between">
                 <p className="text-xs text-blue-400">PAYMENT REQUEST</p>
                 <p className="text-xs text-[#b9b9b9]">Wednesday</p>
