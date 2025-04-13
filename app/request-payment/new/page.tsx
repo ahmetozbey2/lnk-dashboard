@@ -2,7 +2,6 @@
 
 import Sidebar from '@/ui/layout/sidebar';
 import { useUser } from '@auth0/nextjs-auth0/client';
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 /**
@@ -52,7 +51,7 @@ export default function CreatePayrollForm() {
 
     fetchUsers();
   }, [user]);
-  console.log('loog', users);
+
   /**
    * Handles input changes for both <input> and <select> elements.
    *
@@ -108,12 +107,6 @@ export default function CreatePayrollForm() {
       {/* Sidebar navigation */}
       <Sidebar />
 
-      <Link href="/api/auth/logout">
-        <div className="flex items-center justify-end space-x-2">
-          x<p className="max-sm:hidden lg:text-xl">Logout</p>
-        </div>
-      </Link>
-      {}
       {/* Payroll form container */}
       <div className="mr-5 mt-16 flex-[4] rounded-xl bg-[#242424] py-5 shadow-lg">
         {/* Header section */}

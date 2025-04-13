@@ -55,7 +55,9 @@ const menu = [
 export default function Sidebar() {
   return (
     <aside className="h-screen flex-1 text-sm text-white">
-      <Image src={Logo} alt="Viola Logo" width={200} height={40} className="mb-8" />
+      <Link href="/">
+        <Image src={Logo} alt="Viola Logo" width={200} height={40} className="mb-8 cursor-pointer" />
+      </Link>
 
       <h2 className="mb-2 pl-2 text-xs uppercase text-gray-400">Revival Rugs Inc</h2>
 
