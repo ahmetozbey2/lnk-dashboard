@@ -17,5 +17,5 @@ export type User = {
   department?: string;
   position?: string;
   image: string;
-  role: 'MANAGER' | 'EMPLOYEE';
+  role: 'ADMIN' | 'EMPLOYEE';
 };

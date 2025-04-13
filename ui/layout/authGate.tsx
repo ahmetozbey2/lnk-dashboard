@@ -1,11 +1,13 @@
 'use client';
 
+import { useRoleStore } from '@/store/roleStore';
 import { useUser } from '@auth0/nextjs-auth0/client';
 import { useEffect } from 'react';
 
 export default function AuthGate() {
   const { user, isLoading } = useUser();
-
+  const { role } = useRoleStore();
+  console.log('role', role);
   useEffect(() => {
     if (user && user.email) {
       const createUser = async () => {
@@ -17,7 +19,7 @@ export default function AuthGate() {
               name: user.name || user.nickname || '',
               email: user.email,
               image: user.picture,
-              role: 'EMPLOYEE',
+              role: role,
               refId: user.sub?.replace('google-oauth2|', ''), // sub: "github|xxxxx"
               department: '',
               position: '',

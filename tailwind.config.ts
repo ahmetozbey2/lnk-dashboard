@@ -14,11 +14,7 @@ export default {
       colors: {
         purple: '#A82DFA',
       },
-      borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
-      },
+
       keyframes: {
         'accordion-down': {
           from: {
