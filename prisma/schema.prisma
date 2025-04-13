@@ -9,7 +9,7 @@ datasource db {
 
 model User {
   id         String    @id @default(cuid())
-  refId      String    @unique
+  refId      String    
   name       String
   email      String    @unique
   department String?

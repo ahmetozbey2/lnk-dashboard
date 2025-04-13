@@ -1,6 +1,6 @@
 'use client';
 
-import type { PayrollRequest } from '@/app/page';
+import type { PayrollRequest } from '@/app/pagex';
 import React from 'react';
 
 /**

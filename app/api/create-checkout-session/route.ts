@@ -1,4 +1,4 @@
-import type { User } from '@/app/page';
+import type { User } from '@/app/pagex';
 import type { CartItem } from '@/components/checkout';
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';

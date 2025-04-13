@@ -12,15 +12,15 @@ export interface DetailCardProps {
 export default function DetailCard({ icon, label, href }: DetailCardProps) {
   if (href) {
     return (
-      <Link href={href} className="flex items-center p-4 shadow-md rounded-lg cursor-pointer bg-[#242424]">
-        <div className="text-blue-500 text-2xl mr-4">{icon}</div>
+      <Link href={href} className="flex cursor-pointer items-center rounded-lg bg-[#242424] p-4 shadow-md">
+        <div className="mr-4 text-2xl text-blue-500">{icon}</div>
         <span className="text-lg font-semibold text-[#F5FAE6]">{label}</span>
       </Link>
     );
   }
   return (
-    <div className="flex items-center p-4 shadow-md rounded-lg cursor-pointer bg-[#242424]">
-      <div className="text-blue-500 text-2xl mr-4">{icon}</div>
+    <div className="flex cursor-pointer items-center rounded-lg bg-[#242424] p-4 shadow-md">
+      <div className="mr-4 text-2xl text-blue-500">{icon}</div>
       <span className="text-lg font-semibold text-[#F5FAE6]">{label}</span>
     </div>
   );
