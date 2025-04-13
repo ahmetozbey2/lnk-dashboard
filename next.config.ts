@@ -11,6 +11,11 @@ const nextConfig: NextConfig = {
         hostname: 'res.cloudinary.com',
         port: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'portal.coda.co',
+        port: '',
+      },
     ],
   },
 };

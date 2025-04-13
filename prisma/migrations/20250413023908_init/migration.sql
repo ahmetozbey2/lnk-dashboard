@@ -30,9 +30,6 @@ CREATE TABLE "Payroll" (
 );
 
 -- CreateIndex
-CREATE UNIQUE INDEX "User_refId_key" ON "User"("refId");
-
--- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 
 -- AddForeignKey

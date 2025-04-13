@@ -1,6 +1,6 @@
 'use client';
 
-import type { PayrollRequest } from '@/app/page';
+import { PayrollRequest } from '@/packages/request-payment/helpers/types';
 import React from 'react';
 
 /**
@@ -60,7 +60,7 @@ const CheckoutButton: React.FC<CheckoutButtonProps> = ({ products }) => {
 
   return (
     <button
-      className="rounded-[4px] bg-blue-600 p-2  font-bold text-white duration-300"
+      className="rounded-[4px] bg-green-500 p-2  text-white duration-300 text-sm hover:bg-green-500/80"
       type="button"
       onClick={() => {
         // eslint-disable-next-line no-void
@@ -68,7 +68,7 @@ const CheckoutButton: React.FC<CheckoutButtonProps> = ({ products }) => {
           await handleCheckout();
         })();
       }}>
-      Checkout
+      Approve
     </button>
   );
 };

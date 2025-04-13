@@ -1,5 +1,5 @@
-import type { User } from '@/app/page';
 import type { CartItem } from '@/components/checkout';
+import { User } from '@/packages/request-payment/helpers/types';
 import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 import Stripe from 'stripe';
