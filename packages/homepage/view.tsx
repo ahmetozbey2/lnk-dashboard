@@ -14,7 +14,7 @@ const detailCardDatas: Array<DetailCardProps> = [
   {
     icon: <BanknoteArrowUp color="#F5FAE6" />,
     label: 'Request Payment',
-    href: '/request-payment-new',
+    href: '/request-payment/new',
   },
   {
     icon: <History color="#F5FAE6" />,
