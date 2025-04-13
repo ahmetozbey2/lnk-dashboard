@@ -14,11 +14,12 @@ const detailCardDatas: Array<DetailCardProps> = [
   {
     icon: <BanknoteArrowUp color="#F5FAE6" />,
     label: 'Request Payment',
-    href: '/request-payment',
+    href: '/request-payment-new',
   },
   {
     icon: <History color="#F5FAE6" />,
     label: 'Payment History',
+    href: '/request-payment',
   },
 ];
 
