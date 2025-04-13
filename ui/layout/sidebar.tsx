@@ -1,6 +1,7 @@
 import Logo from '@/assets/viola_icon.svg';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Banknote, Clock, CreditCard, FileText, Home, Settings, User } from 'lucide-react';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Banknote, Clock, CreditCard, FileText, Home, Menu, Settings, User } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -52,6 +53,43 @@ const menu = [
   },
 ];
 
+function SidebarContent() {
+  return (
+    <Accordion type="multiple" className="flex w-full flex-col gap-y-3">
+      {menu.map((item, index) => (
+        <AccordionItem key={item.title} value={`item-${index}`} className="border-none">
+          {item.subItems ? (
+            <>
+              <AccordionTrigger className="flex justify-between gap-2 px-2 py-1 text-left text-white hover:bg-[#545454]">
+                <div className="flex items-center gap-x-2">
+                  {item.icon}
+                  <span>{item.title}</span>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className=" space-y-1 py-1">
+                {item.subItems.map((sub) => (
+                  <Link
+                    key={sub.title}
+                    href={sub.href}
+                    className="hover:bg-purple-600/20 block w-fit rounded-r-full px-3 py-1 pl-9 text-white transition duration-300 hover:bg-purple">
+                    {sub.title}
+                  </Link>
+                ))}
+              </AccordionContent>
+            </>
+          ) : (
+            <Link
+              href={item.href}
+              className="flex gap-2 px-2 py-1  text-left text-white duration-300 hover:bg-[#545454]">
+              {item.icon}
+              <span>{item.title}</span>
+            </Link>
+          )}
+        </AccordionItem>
+      ))}
+    </Accordion>
+  );
+}
 export default function Sidebar() {
   return (
     <aside className="h-screen flex-1 text-sm text-white">
@@ -59,41 +97,21 @@ export default function Sidebar() {
         <Image src={Logo} alt="Viola Logo" width={200} height={40} className="mb-8 cursor-pointer" />
       </Link>
 
-      <h2 className="mb-2 pl-2 text-xs uppercase text-gray-400">Revival Rugs Inc</h2>
-
-      <Accordion type="multiple" className="flex w-full flex-col gap-y-3">
-        {menu.map((item, index) => (
-          <AccordionItem key={item.title} value={`item-${index}`} className="border-none">
-            {item.subItems ? (
-              <>
-                <AccordionTrigger className="flex justify-between gap-2 px-2 py-1 text-left text-white hover:bg-[#545454]">
-                  <div className="flex items-center gap-x-2">
-                    {item.icon}
-                    <span>{item.title}</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className=" space-y-1 py-1">
-                  {item.subItems.map((sub) => (
-                    <Link
-                      key={sub.title}
-                      href={sub.href}
-                      className="hover:bg-purple-600/20 block w-fit rounded-r-full px-3 py-1 pl-9 text-white transition duration-300 hover:bg-purple">
-                      {sub.title}
-                    </Link>
-                  ))}
-                </AccordionContent>
-              </>
-            ) : (
-              <Link
-                href={item.href}
-                className="flex gap-2 px-2 py-1  text-left text-white duration-300 hover:bg-[#545454]">
-                {item.icon}
-                <span>{item.title}</span>
-              </Link>
-            )}
-          </AccordionItem>
-        ))}
-      </Accordion>
+      <h2 className="mb-2 pl-2 text-xs uppercase text-gray-400 max-lg:hidden">G-LNK</h2>
+      <Sheet>
+        <SheetTrigger className="lg:hidden absolute top-4 right-4 z-50">
+          <Menu />
+        </SheetTrigger>
+        <SheetContent className="bg-[#1D1D1D] border-none">
+          <Link href="/">
+            <Image src={Logo} alt="Viola Logo" width={200} height={40} className="mb-8 cursor-pointer" />
+          </Link>
+          <SidebarContent />
+        </SheetContent>
+      </Sheet>
+      <div className="max-lg:hidden">
+        <SidebarContent />
+      </div>
     </aside>
   );
 }
