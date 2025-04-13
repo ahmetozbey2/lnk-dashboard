@@ -1,18 +1,10 @@
-// app/api/payrolls/[userId]/route.ts
 import { prisma } from '@/lib/prisma';
 import { NextRequest, NextResponse } from 'next/server';
 
-type Params = {
-  params: {
-    userId: string;
-  };
-};
-
-export async function GET(_: NextRequest, { params }: Params) {
-  const { userId } = params;
+export async function GET(req: NextRequest, context: { params: Promise<{ userId: string }> }) {
+  const { userId } = await context.params;
 
   try {
-    // Kullanıcının gerçekten var olup olmadığını kontrol et
     const userExists = await prisma.user.findUnique({
       where: { id: userId },
       select: { id: true },

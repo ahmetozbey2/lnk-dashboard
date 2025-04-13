@@ -2,7 +2,6 @@ import { prisma } from '@/lib/prisma';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(req: NextRequest, context: { params: Promise<{ refId: string }> }) {
-  // ❗ Next.js 15 ile context.params artık Promise olabilir
   const { refId } = await context.params;
 
   try {
