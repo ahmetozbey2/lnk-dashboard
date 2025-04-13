@@ -3,7 +3,8 @@
 import Sidebar from '@/ui/layout/sidebar';
 import { BanknoteArrowUp, History, TreePalm } from 'lucide-react';
 
-import DetailCard, { DetailCardProps } from './components/detailCard';
+import type { DetailCardProps } from './components/detailCard';
+import DetailCard from './components/detailCard';
 
 const detailCardDatas: Array<DetailCardProps> = [
   {
@@ -39,9 +40,9 @@ export default function HomepageView() {
       <Sidebar />
 
       {/* Main content wrapper */}
-      <div className="flex-[5] flex items-start pt-10 px-10 gap-x-10">
+      <div className="flex flex-[5] items-start gap-x-10 px-10 pt-10">
         {/* Grid of detail cards */}
-        <div className="grid grid-cols-2 gap-4 px-4 flex-[2.5]">
+        <div className="grid flex-[2.5] grid-cols-2 gap-4 px-4">
           {detailCardDatas.map((detailCardData, index) => (
             <DetailCard
               key={index}
@@ -53,14 +54,14 @@ export default function HomepageView() {
         </div>
 
         {/* Right-side content section */}
-        <div className="flex-1 w-full bg-[#242424]">
+        <div className="w-full flex-1 bg-[#242424]">
           {[...Array(3)].map((_, index) => (
-            <div key={index} className={`px-5 py-4 ${index < 2 ? 'border-b-[1px] border-[#b9b9b9]' : ''}`}>
-              <div className="flex items-center justify-between mb-1">
+            <div key={index} className={`px-5 py-4 ${index < 2 ? 'border-b border-[#b9b9b9]' : ''}`}>
+              <div className="mb-1 flex items-center justify-between">
                 <p className="text-xs text-blue-400">PAYMENT REQUEST</p>
                 <p className="text-xs text-[#b9b9b9]">Wednesday</p>
               </div>
-              <h2 className="text-base font-semibold mb-1 text-white">Upcoming Payment</h2>
+              <h2 className="mb-1 text-base font-semibold text-white">Upcoming Payment</h2>
               <p className="text-xs text-[#b9b9b9]">
                 This is a simple homepage layout with a sidebar and some content.
               </p>
